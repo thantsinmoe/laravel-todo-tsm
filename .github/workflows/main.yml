@@ -15,8 +15,6 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSHKEY }}
-          port: 22
-          timeout: "60s"
           debug: true
           script: "cd /var/www/html/laravel-todo-tsm && ./deploy.sh"
         
