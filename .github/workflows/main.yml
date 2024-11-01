@@ -10,8 +10,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Deploy to server
-        uses: appleboy/ssh-action@v1.1.0
-        with: 
+        uses: garygrossgarten/github-action-ssh@v0.1.4
+        with:
+          command: "echo 'Connection successful!'"
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSHKEY }}
