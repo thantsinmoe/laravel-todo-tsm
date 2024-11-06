@@ -16,6 +16,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSHKEY }}
           debug: true
-          script: "cd /var/www/html/laravel-todo-tsm && ./deploy.sh"
+          script: "cd /var/www/laravel-todo-tsm && ./deploy.sh"
         
         
