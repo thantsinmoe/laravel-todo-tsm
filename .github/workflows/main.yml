@@ -9,8 +9,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Clean up workspace
-        run: sudo rm -rf .git
       - name: Git-permission
         run: sudo chmod -R 755 .git
       - name: Deploy to server
