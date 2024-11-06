@@ -15,13 +15,6 @@ jobs:
         run: sudo chmod -R 755 .git
       - name: Verify permissions of .git directory
         run: ls -la .git
-      - name: Remove and reinitialize .git directory (last resort)
-        run: |
-          sudo rm -rf .git
-          git init
-          git remote add origin git@github.com:thantsinmoe/laravel-todo-tsm.git
-          git fetch origin
-          git reset --hard origin/main
       - name: Deploy to server
         uses: appleboy/ssh-action@v1.1.0
         with:
