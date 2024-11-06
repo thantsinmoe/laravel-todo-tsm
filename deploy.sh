@@ -2,7 +2,7 @@
 
 set -e
 echo "Deployment Started..."
-cd /var/www/html/laravel-todo-tsm/
+cd /var/www/laravel-todo-tsm/
 git pull
 composer install
 npm install
