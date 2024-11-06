@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Git-permission
+        run: sudo chmod -R 755 .git
       - name: Deploy to server
         uses: appleboy/ssh-action@v1.1.0
         with:
