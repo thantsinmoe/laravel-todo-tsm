@@ -9,12 +9,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Git-permission
-        run: sudo chmod -R 755 .git
-      - name: Verify permissions of .git directory
-        run: ls -la .git
       - name: Deploy to server
         uses: appleboy/ssh-action@v1.1.0
         with:
