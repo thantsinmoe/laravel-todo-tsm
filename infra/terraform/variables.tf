@@ -3,7 +3,6 @@ variable "ssh_public_key" {
   description = "Public SSH key content (from GitHub Secret)"
   type        = string
 }
-variable "aws_secret_key" {}
 
 variable "key_name" {}
 variable "public_key_path" {}
