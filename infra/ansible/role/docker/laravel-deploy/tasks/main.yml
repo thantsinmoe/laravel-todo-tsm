@@ -1,0 +1,31 @@
+---
+- name: Install Docker
+  yum:
+    name: docker
+    state: present
+
+- name: Start Docker
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Crate larvel app directory
+  file:
+    - path: /opt/larvel-todo
+      state: directory
+
+- name: Copy docker-compose file
+  template:
+    src: docker-compose.yml.j2
+    dest: /opt/larvel-todo/docker-compose.yml
+
+- name: Copy laravel .evn file
+  Copy:
+    src: .env.example
+    dest: /opt/laravel-todo/.env
+
+- name: Start laravel app
+  command: docker compose up -d
+  args:
+    chidr: /opt/laravel-todo

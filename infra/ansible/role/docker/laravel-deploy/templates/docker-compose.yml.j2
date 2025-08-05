@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  app:
+    image: YOUR_DOCKERHUB_USERNAME/laravel-todo:latest
+    ports:
+      - "80:80"
+    environment:
+      - APP_ENV=local
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE=laravel
+      MYSQL_ROOT_PASSWORD=secret
+    volumes:
+      - db_data:/var/lib/mysql
+
+  volumes:
+    db_data:
