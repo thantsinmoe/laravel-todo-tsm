@@ -5,7 +5,6 @@ variable "ssh_public_key" {
 }
 
 variable "key_name" {}
-variable "public_key_path" {}
 variable "vpc_id" {}
 
 variable "ami_id" {}
